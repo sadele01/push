@@ -252,11 +252,12 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
-                getMyGcmClass: function () {
-                        var push = PushNotification.init({ "android": {"senderID": "YOUR_SENDER_ID"}});
+                getMyGcm: function (sender) {
+                        var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
                                 console.log(data.registrationId);
                                 document.getElementById("gcm_id").innerHTML = data.registrationId;
+                                return gcm_id
                         });
 
                         push.on('notification', function(data) {
