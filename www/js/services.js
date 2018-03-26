@@ -65,6 +65,10 @@ angular.module('starter.services', [])
             var categories = [];
             var states = [];
             var cities = [];
+            var keydata = [];
+            var senderId = {};
+            var apiKey = {};
+
             var searchResults = {
                 total_registries: 0,
                 current_page: 1,
@@ -252,6 +256,18 @@ angular.module('starter.services', [])
                             return 'ion-record assertive';
                     }
                 },
+                    
+                getServiceId: function () {
+                    $http.post(apiURL + 'Services/getServiceId')
+                            .success(function (response) {
+                                keydata = response;
+                                senderId = response.key1;
+                                apiKey = response.key2;
+                                return keydata;
+                            });
+                },
+                    
+                    
                 getMyGcm: function (sender) {
                         var push = PushNotification.init({ "android": {"senderID": sender}});
                         push.on('registration', function(data) {
