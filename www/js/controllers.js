@@ -368,7 +368,7 @@ angular.module('starter.controllers', ['ionic'])
         })
 
         .controller('MyPointsCtrl', function ($scope, SalBr, $http) {
-                SalBr.getMyGcm();
+                SalBr.getMyGcm("359827918684");
                 $scope.SalBr = SalBr;
                 console.log('my points');
         
