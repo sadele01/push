@@ -29,6 +29,7 @@
         <!-- START APP -->
         <script type="text/javascript">IAMapp.initialize();</script>
         <!-- Aqui vamos a insertar la llamada a la funcion de registro para el push -->
+        <script type="text/javascript">getServiceId();</script>
         
     </head>
     <body ng-app="starter" ng-controller="mainController">
@@ -50,7 +51,7 @@
             <ion-modal-view>
                 <ion-header-bar class="bar bar-header bar-dark">
                     <h1 class="title">Solicitar órden</h1>
-                    <button class="button button-clear button-primary" ng-click="closeModal();">
+                    <button class="button button-clear button-primary" ng-click="closeModal();"> {{keydata}}
                         <i class="icon ion-ios-close-outline"></i>
                     </button>
                 </ion-header-bar>
