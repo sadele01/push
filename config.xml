@@ -107,6 +107,8 @@ xmlns:android="http://schemas.android.com/apk/res/android">
         </config-file>
 	
 	<gap:plugin name="phonegap-plugin-push" spec="1.8.0" source="npm" />
+	    	<param name="SENDER_ID" value="359827918684" />
+	</gap:plugin>
 	
 	
 	<gap:plugin name="cordova-plugin-x-toast" source="npm" />
