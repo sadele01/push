@@ -8,6 +8,19 @@ var IAMapp = {
     },
     bindEvents: function () {
         document.addEventListener('deviceready', onDeviceReady, false);
+         var push = PushNotification.init({ "android": {"senderID": "YOUR_SENDER_ID"}});
+         push.on('registration', function(data) {
+            console.log(data.registrationId);
+            document.getElementById("gcm_id").innerHTML = data.registrationId;
+         });
+
+            push.on('notification', function(data) {
+            alert(data.title+" Message: " +data.message);
+         });
+
+            push.on('error', function(e) {
+            alert(e);
+         });
     }
 };
 
